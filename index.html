@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script rel="text/javascript" src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Eco House</title>
+</head>
+
+<body>
+    <header>
+        <div class="icon-nav">
+            <nav></nav>
+        </div>
+    </header>
+    <section class="section-intro">
+        <h1>Nos somos a Eco House</h1>
+        <div class="icon">
+            <div class="logo"></div>
+        </div>
+        <div class="container-img">
+            <img src="./imagens/house.png" alt="">
+        </div>
+
+    </section>
+    <section class="section-description">
+        <div class="description">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic molestias, dolorem culpa modi non fugiat
+                veniam iste asperiores, repellendus omnis exercitationem, sit vel quis deserunt. Optio voluptatibus at
+                eum aliquam?</p>
+            <button>Button</button>
+        </div>
+        <div class="img">
+            <img src="./imagens/descricao.png" alt="">
+        </div>
+    </section>
+    <section class="section-amarzenamento">
+        <h2>Armazenamento de Água</h2>
+        <div class="grafico">
+            <canvas id="myChart"></canvas>
+        </div>
+
+
+        <script>
+            // === include 'setup' then 'config' above ===
+
+            const labels = [
+                'Comsumo de Agua',
+                'Caixa de água',
+                'Cisterna',
+            ];
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: ['#00AEB9',
+                        '#186FED',
+                        '#223654'
+                    ],
+                    borderColor: '#00727A',
+                    data: [50, 15, 30],
+                }]
+            };
+
+            const config = {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    color: '#fff',
+                    responsive: true
+                }
+            };
+
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
+
+    </section>
+    <section class="section-climograma">
+        <h2>Climograma</h2>
+        <div class="img-ilustr">
+            <img src="./imagens/nuvem.svg" alt="">
+        </div>
+        <div class="grafico-climograma">
+            <canvas id="myChart-climograma"></canvas>
+        </div>
+        <script>
+            // === include 'setup' then 'config' above ===
+            const labels2 = ['Dom',
+                'Seg',
+                'Ter',
+                'Qua',
+                'Qui',
+                'Sex',
+                'Sab',
+            ]
+            const dataClimograma = {
+                labels: labels2,
+                datasets: [{
+                        label: 'Mim de Chuva',
+                        data: [10, 30, 8, 80, 2, 10, 10],
+                        borderColor: '#fffff',
+                        backgroundColor: '#00BAC7',
+                        stack: 'combined',
+                        type: 'bar'
+                    },
+                    {
+                        label: 'Agua Coletada',
+                        color: '#fffff',
+                        data: [10, 30, 8, 80, 2, 10, 10],
+                        borderColor: '#00373B',
+                        backgroundColor: '#00373B',
+                        stack: 'combined',
+                    },
+                ]
+            };
+
+            const configClimograma = {
+                type: 'line',
+                data: dataClimograma,
+                options: {
+                    color:'#fffff',
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Relação entre a chuva e a agua coletada ',
+                            color: '#fffff'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            stacked: true
+                        }
+                    }
+                },
+            };
+            const myChartClimograma = new Chart(
+                document.getElementById('myChart-climograma'),
+                configClimograma
+            );
+        </script>
+    </section>
+    <section class="section-previsao">
+        <h2>Temperatura</h2>
+        <div class="prev1">
+            <div class="item-prev">
+                <h3>Segunda-Feira 05</h3>
+                <strong> 30°</strong>
+                <img src="./imagens/sol.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Terça-Feira 06</h3>
+                <strong> 26°</strong>
+                <img src="./imagens/nublado.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Quarta-Feira 07</h3>
+                <strong> 24°</strong>
+                <img src="./imagens/nublado.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Quinta-Feira 08</h3>
+                <strong> 18°</strong>
+                <img src="./imagens/chuva.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Sexta-Feira 09</h3>
+                <strong> 33°</strong>
+                <img src="./imagens/sol.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Sabado 10</h3>
+                <strong> 28°</strong>
+                <img src="./imagens/nublado.svg" alt="" srcset="">
+            </div>
+        </div>
+        <div class="prev1">
+            <div class="item-prev">
+                <h3>Domingo 11</h3>
+                <strong> 37°</strong>
+                <img src="./imagens/sol.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Segunda-Feira 12</h3>
+                <strong> 30°</strong>
+                <img src="./imagens/sol.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Terça-Feira 13</h3>
+                <strong> 30°</strong>
+                <img src="./imagens/nublado.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Quarta-Feira 14</h3>
+                <strong> 34°</strong>
+                <img src="./imagens/sol.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Quinta-Feira 15</h3>
+                <strong> 20°</strong>
+                <img src="./imagens/nublado.svg" alt="" srcset="">
+            </div>
+            <div class="item-prev">
+                <h3>Sexta-Feira 16</h3>
+                <strong> 19°</strong>
+                <img src="./imagens/nublado.svg" alt="" srcset="">
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
